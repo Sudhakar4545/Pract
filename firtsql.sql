@@ -1,3 +1,5 @@
+welcome to the edit option as per review doc
+
 DECLARE
   CURSOR c_get IS
     SELECT FIRST_NAME, EMPLOYEE_ID, JOB_ID, HIRE_DATE FROM emp WHERE HIRE_DATE = TRUNC(SYSDATE);
