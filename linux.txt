@@ -1,0 +1,551 @@
+References:
+https://www.linkedin.com/posts/maneesha-t-c-23b0b11a1_linux-technical-interview-guide-activity-7296130261388320771-s8XL?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAFcwYsIBSshCwHroi9X6zg-Gk0vPZLJSyUk
+
+
+What is linux :
+
+linux is nothing but os
+os is nothing but an interface or mediator b/w user and hardware.
+HLL--MAch-Binary--0&1
+LLL--
+         	
+OS types:
+
+Deskt   op
+server class
+Linux
+
+Unix havivng 4 different typesof OS available
+1.Linux
+2.Sol  -its supports sparks
+3.HP-Unix- 
+4.Aix
+
+linux:
+it's is opensource 
+Machain independent
+Less cost based very usefull
+
+Inside Linux
+
+RHel (RED HAT ENTERPRISE LINUX) --IMP( verry supportive,good certification)
+Suse
+Centos
+Ubuntu
+Fedora
+procMandrid
+
+File system hirachy:
+
+/	  --Parent dir of linux
+/root --root user is a admin
+/home -- Normal user home directory
+/sbin -- Admin related commands available only  root
+/bin  -- user related commands 
+/dev  -- logiacal partition information
+/devices-Physical partition information
+/mnt  --Mounting(creating link betwen file and directory)
+/media--
+/usr-- Software location( Same company softwares showing)
+/opt-- Third party software location
+/etc -- Configuration file(default parameters)
+/proc-- current running programs
+/var --log file location
+/tmp -- temp file location
+/boot --bootable file access
+/lib --library module information
+/swap --Virtual Memory
+
+How to Create file:
+
+Touch
+-- an empty file 
+-- Multiple file at a time creation 
+-- we can change the time stamp
+touch file1
+touch file1 file2 file3 file4
+touch file{1..99} here crete file1 to file99 --- multifile file not created
+touch file1:
+Cat
+--we can see file with data
+--append data( adding data at the end)
+ex: cat >> testfile
+-- see the content
+ex: cat >testfile  --remove the old data and placing new data
+ctrl + d is : xit 
+
+dd -- to create a sized file
+by using dd command we can copy file one place to onathere place.
+Ex: dd if=/dev/zero of file2 bs=1024k count=10
+
+Vi or VIM 
+-- to manage a file 
+
+How to Create directory?
+EX: 
+mkdir dir1
+mkdir a b f g 
+mkdir d{1..99}
+
+Sub directory creation:
+
+mkdir -p /E/EN/ENT/Moviemks
+
+mkdir -p /E/EN/ENT/Movies/{T,H,E}
+Here movies under we have three sub directories available.
+
+tree /E
+
+Day4:
+
+Vi or vim: To manage file
+
+vi file1  --if file exist it will open or create new file
+
+
+Vi editor modes:
+1)insert modes --to insert data
+
+i --to insert text exactly from cursor position
+I --cursor will go to starting of the line
+A --cursor will go to ending of the line
+o --to insert empty line or new row line will create after cursor place
+O --to insert empty line or new row will create  before cursor place
+
+
+2)Command mode --to edit file  syntax: Press esc to switch from insert mode to command mode
+gg  --Cursor will move to start of the file
+G  --Cursor will move to end of the file
+w  --Cursor will move to word word by forward 
+(n)w -- depends upon total words
+b  --cursor  will  move 1 word backward
+(n)b -- cursor will move n words backward
+yy -- To copy lcatine
+(n)yy--To copy n line 
+p  --paste below cursor position
+P --paste above cursor position
+dd --To delete a line
+d(n)d-- To delete nlines
+dw-- to delete word
+n dw-- to delete n words 
+u --Undo char last (undo is nothing but cancel the previous change)
+
+U -- line level change
+
+crt+R --redo
+x -to dele undo line
+
+/String : find the perticular string in edit file
+
+
+3)ESc/colon/extend mode -- to quit the file with or without saving mode
+
+Esc : w -to save file
+Esc : q!- to qlsuit without save
+Esc : wq! - t0 quit with save
+Esc : x  --save and quit form the file 
+Esc : 501 --Cursor will goto line no 501
+Esc : se nu --to assigne linie no -- se menas serial no will display
+Esc : se nonu -- to remove line no
+
+Day5:
+
+Sub directory creation:
+
+mkdir -p /E/EN/ENT/Movies
+
+mkdir -p /E/EN/ENT/Movies/{T,H,E}
+Here movies under we have three sub directories available.
+
+tree /E
+
+Perticular directory:
+Ex: cd /e/en/ent/movies/t
+Ex2: cd /e/en/ent/movies/h
+
+coming back previous directory
+Ex: cd ..
+
+comming back two directories
+Ex: cd ../../
+
+comming to parent directory
+Ex: cd /
+
+List:
+ls -l list of file and size
+ls -a incluede hidden file will shown, Checking hidden files
+ls -i inode number will display 
+ls -ltr sequence order wise file seeing
+ls -lZ se linux contex line 
+
+How to copy file from one directory to onather directory
+Ex:
+cp sourcefilepath destinationpath
+
+cp /vlearn/vmware/f1 /vlearn/Unix -- Obsolute path --Nothing but complete path of a file or dir, it will always start with  '/'
+cp f1 /vlearn/unix : it is nothing but continution path of pwd, it will never start with '/'
+cp -r/vlearn/vmware/test /vlearn/Unix
+cp -r test /vlearn/Unix
+
+same as cp command replace with mv
+
+
+mv file .file  to hide the file name
+mv .file file to unhide the file name
+
+
+rm -rf file_name
+rm -rf /vlearn/vlearn/vmware/test
+
+
+Day 6:
+Filter Commands:
+less --less command having scrolling option in more command only enter keyword will work
+more -- diplay the content form top to bottom
+head -- first 10 line will display
+tail --last 10 line 
+sort -- sorting the file assending or desending 
+who  -- how may user connected one perticular server
+Who
+w  -- it will give more information
+whoami -- which user credential you are using right now
+who am  i--
+wc   --word count Ex: cat file1 | wc
+history --history Ex: history
+!n--
+!! last command
+History -c creat
+date
+clear
+grep
+
+ps -aux -- the command will show the all procesess of system
+ps -aux | sort -nr -k3 sortout the specific colunm value
+ps -aux | sort -nr -k3 | head -11
+ps -aux | wc
+ps -aux | wc -c
+ps -aux | wc -l
+
+Day 7:
+
+Wild cards:
+*  -- all/Everything
+Ex:
+ls f*
+rm -rf f*
+ls *.log
+ls *.txt
+ls *log* 
+
+? --Unknown
+
+ls f?
+ls ?a
+ls ??
+ls ??
+
+{},[] define range
+
+what is the diff b/w find and grep?
+
+Find : used to find out the complete path or location of a file or firectory
+Ex:
+find [Serch location] [option]
+
+Options:
+-name
+find / -name testfile
+-types 
+-size
+find / - size 10M  
+-inum
+-perm
+-user
+-group
+
+
+Day 8:
+
+Tar & Zip:
+tar -cvf test.tar f{1..99}
+ls
+f1 f2 .. f99
+gzip test.tar
+ls
+f1 f2 ..f99 test.tar
+gunzip test.tar.gz
+ls test.tar
+
+REDIRECTION:
+redirection is nothing but routing the output in some other loaction.
+ls
+ls >lsbkp
+cat lsbkp
+
+cat file1
+cat file1 > file1.bkp  -- it will delete old output inserting new output
+
+cat file1 >> file2.bkp -- append the data.
+
+>file1.bkp --Truncate all the data in file
+
+Help Commands:
+man ls   -- Man command will display the file information
+ls  --   :here showing direct message
+whatis ls --  '' ""
+
+Links:
+
+it is nothing but creating shortcut file to access original file form somother location.
+
+Types of links:
+
+Soft link:
+We can create link b/w file,dir and parts
+file size will be diff for both original and link
+if original file is deleted we can't acces link  file
+inode no will 
+
+Hard link:
+We can create link only file
+both are same size.
+WE can access  link file
+
+ln -s file1 file1sc  --Shortcut created for soft link
+
+ln file1 file1sc    --Shortcut created for hard link
+
+
+diff b/w copy and link 
+ in copy file  if we are editing parent file data will midified only 1 
+ link file will where ever you edited data it will reflect both files.
+
+Day 9:
+
+File Permisions
+
+File permisions are nothing but previllages on a file or directories in diff levels like user(i),groups and others(O).
+ 
+Types of files:
+Normal file(-)
+directory file(d)
+link file (l)
+socket file(s)
+block file(b)
+char file(c)
+
+Permisions:
+
+read r= 4
+write w=2
+excecute x=1
+
+
+user: user is nothing but file owner
+group: 
+others:
+Permision methods:
+1. Symbolic method(r,w,x)
+2.Numeric/absolute (4,2,1)
++ --Add
+- --Rempove
+== --Assign
+
+chmod g+wx file1
+chmod  u+x filel
+chmod o-r file1
+
+chmod g+wx,u+x,o-r  file1
+chmod  u=rwx,g=rwx,o=rwx file1
+chmod a=rwx file1
+chmod a-x file1
+
+how to fnd file and directories in linux
+
+-, d,l
+
+-rw-r--r--.1 root root 0 oct 11 19:21 logone
+Numeric/absolute:
+
+
+chmod 744 logone
+chmod 777 logone
+chmode 000 logone
+chmod 640 logone
+chmod 111 logone
+
+
+deaault permisions for file or directory:
+file -- fullperm - umask(022)
+
+dir - fullperm -umask(022)
+umask default value 022
+for normal use  002
+umask 0022
+Can we change umask vlaue ? 
+Yes
+Full permisions:
+file -666
+directory - 777
+
+
+How to change umask value permanently ls  ta
+
+Disk Management / File system  Management
+
+It's nothing but creating,modifying and dleting partitions.
+
+To encapsulate(protect ) the data.
+To incr3ease the system performance.
+To increase the storage in a proper manner.
+
+Types of discks:
+
+Hdd 	Hdd 		No of type
+IDE 	/dev/hda 	16
+
+
+Hard disk structure:
+
+1 sector half kb( 512b)
+
+ipl --446b
+
+mbr --512b
+
+pti -- 64b
+
+magic no 2b
+
+
+
+How to fisqnd server cable:
+
+fdisk -l
+or
+parted -l  54321 not working
+
+fdisk /dev/sdb -- creatind partition
+p:   -- 
+n:  --new one
+l  --logical patitian
+p  --Primary patitian
+l: --
+fc: --first cylinder
+lc: --last "
+w: 
+#partx -a/dev/sdb or partprobe /dev/sdb6
+
+cat /proc/partitions
+
+mkfs -t ext3  /dev/sdb6 -- formating partition 
+(make formate system)
+mkfs.ext3 dev/sdb6
+		:
+		:
+		^
+		vtoc        -- Voluem table of content
+		super block
+		boot block
+		Data block   --95% space occupied
+		inode block 
+		bkp super block  (Remaining 5% all blocks can occupied
+		
+		
+		
+Day 13:
+
+SWAP: it nothing but virtual memory, which is used to reduce burden on the ram an to increase system performance.
+
+Swap file system type: swapfs
+ingeneral size of the swap is double of the ram
+we will create swap from harddisk
+we can create swap in 2 methods
+1)swapfile -- temp purpose( ex:migration)
+2)swap partition-- permanent purpose
+
+dd if=/dev/zoro of=swapfile bs=1024k count=1024
+ls swapfile
+mkswap swapfile -- to conver normal file to swap file.
+swapon swapfile -- to enable to swapfile
+swapoff swapfile-- to disable swapfile
+swapon -swapfile-- to check the status of swapfile
+---PErminant-----
+fdisk /dev/sdb 
+n
+l
+fc
+lc+1G(dev/sdb9)
+t 
+(1-9):9
+hexcode:82
+w:
+
+mkswap dev/sdb9 -- to convert normal file to swap part 
+swapon dev/sdb9 -- to enable eto swa part
+swapon -s --to check status of swap
+swapoff /dev/sdb9 -- to disable swap part
+
+
+swapin(pagein):Processes coming grom ram to swap
+swapout(pageout):Processes going out from swap
+
+
+Day14:
+
+LVM : it  is nothing but virtualizing the disks  to manage storage.
+
+stnd part  :	
+we can't resize the part
+we can create 16(IDE),64(scsi) part
+3)we can't manage storage in a prorper manner
+LVM :
+we Can resize lv's 
+we canage 
+
+
+Day 15:
+
+LVM
+
+How to extend logical volume?
+1.Extend lv  
+2. extend f/s type
+3.Check size
+
+
+ --------------------------------------------------
+ 
+ ls  -- listing the file 
+ cp
+ mv
+ mkdir
+ touch
+ find 
+ top
+ df - disk space
+ 
+ ------------------------Interview Questions------------------
+ 1. Copy a file from the local server to a remote server
+ 
+ scp /path/to/local/file.txt user@remote_host:path/to/remote/destination/
+ 
+ 2. Copy a file from a remote server to the local server
+ 
+ scp user@remote_host:path/to/remote/file.txt  /path/to/local/destiation/
+ 
+ 3. Copy a file from one remote server to another remote server
+ 
+ scp user1@remote_host1:/path/to/remote/file.txt user2@remote_host2:/path/to/remote/destination/
+ 
+Important Notes:
+
+Replace user with the username for the remote server.
+Replace remote_host with the IP address or hostname of the remote server.
+Ensure you have SSH access to the remote server and the necessary permissions for copying files.
+If you use key-based authentication, make sure your SSH private key is properly configured.
+If scp is not available, you can use rsync or sftp as alternatives.
+
+
+C:/Users/admin/Clone_branch
