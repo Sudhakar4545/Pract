@@ -12,7 +12,7 @@ DECLARE
   );
   TYPE t_emp_tab IS TABLE OF t_emp_rec INDEX BY PLS_INTEGER;
 
-  v_type_update t_emp_tab;
+  v_type_update t_emp_tab; --edoited here
 BEGIN
   OPEN c_get;
   LOOP
